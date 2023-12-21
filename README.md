@@ -4,15 +4,20 @@ A calendar-integrated task manager web application. Upon logging in or signing u
 with a personalized dashboard that seamlessly integrates a user profile and an interactive calendar.
 
 - **User Authentication:** Secure login and sign-up functionality for personalized user accounts.
+  ![User authentication](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
   
 - **Dashboard:** A centralized hub showcasing user information and a dynamic calendar for intuitive task management.
-
+  ![Dashboard](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  
 - **Calendar Integration:** Users can easily select a date from the calendar to view their scheduled tasks for the day.
-
+  ![Calendar](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  
 - **Task Organization:** Tasks are categorized into sections, including upcoming tasks, completed tasks, and overdue tasks.
-
+  ![Tasks](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  
 - **Task Operations:** Users have the flexibility to add, update, delete, and mark tasks as done, providing full control over their task list.
-
+  ![Tasks](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  
 ## Impact: 
 
 - Optimized task management for users by implementing an intuitive interface, leading to heightened productivity and improved organization. The user-friendly design with the integration of an interactive calendar further
