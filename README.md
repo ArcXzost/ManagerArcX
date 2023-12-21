@@ -33,6 +33,8 @@ with a personalized dashboard that seamlessly integrates a user profile and an i
 - The task table files are included in database\migrations\2023_07_12_173235_create_tasks_table.php
 - Run these commands on separate terminals in the root directory of the project(i.e backend here)
   > php artisan serve --port=[port]
+  
   > npm run start
+
 - The default landing page can be accessed using the end point localhost:[port]/tasks
 - Hope you like this project :)
