@@ -4,6 +4,7 @@ A calendar-integrated task manager web application. Upon logging in or signing u
 with a personalized dashboard that seamlessly integrates a user profile and an interactive calendar.
 
 - **User Authentication:** Secure login and sign-up functionality for personalized user accounts.
+
   ![User authentication](https://github.com/ArcXzost/ManagerArcX/blob/main/UserLogin.png)
   
 - **Dashboard:** A centralized hub showcasing user information and a dynamic calendar for intuitive task management.
