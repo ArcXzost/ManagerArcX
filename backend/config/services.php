@@ -31,4 +31,18 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'firebase' => [
+        'database_url' => 'https://managerarcx-default-rtdb.asia-southeast1.firebasedatabase.app/',
+        'database_auth_variable' => null,
+        'storage_bucket' => 'your-firebase-storage-bucket.appspot.com',
+        'app_id' => 'ManagerArcX',
+        'project_id' => 'ManagerArcX',
+        'private_key' => '\..\key\firebase.json',
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URL'),
+    ],        
 ];

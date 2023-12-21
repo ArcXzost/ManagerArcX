@@ -117,7 +117,10 @@
                     </div>
                 </div>
             </div>
-
+        <script>
+        // Assign the user data to a global JavaScript variable
+        var userData = @json($user); 
+        </script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script type="text/javascript" src="{{ URL::asset('js/logged.js') }}"></script>

@@ -21,8 +21,8 @@
             <a id="projects" href="#cta" class="text-slate-500 text-2xl block px-8 pt-8 no-underline transition duration-300 hover:text-violet-400">Projects</a>
          </div>
          <h1 class="font-mono text-4xl text-violet-400 text-center justify-center grow">ManagerArcX</h1>
-         <a id="signUp" href="#cta" class="text-violet-400 text-2xl text-center justify-center transition duration-300 hover:text-white">Sign up</a>
-         <a id="logIn" href="#cta" class="text-violet-400 text-2xl  text-center justify-center pl-6 pr-6 transition duration-300 hover:text-white">Login</a>
+         <a id="signUp" onclick="googleauth()" class="text-violet-400 text-2xl text-center justify-center transition duration-300 hover:text-white">Sign up</a>
+         <a id="logIn" onclick="googleauth()" class="text-violet-400 text-2xl  text-center justify-center pl-6 pr-6 transition duration-300 hover:text-white">Login</a>
       </header>
     
       <section class="flex">

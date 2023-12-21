@@ -8,7 +8,7 @@ use App\Models\TaskManager;
 use Illuminate\Http\Request;
 use Mail;
 use App\Mail\MailTask;
-
+use Laravel\Socialite\Facades\Socialite;
 
 class APITasksController extends Controller
 {
@@ -19,7 +19,7 @@ class APITasksController extends Controller
         $data->task_owner = $request->get('task_owner');
         $data->task_owner_email = $request->get('task_owner_email');
         $data->task_eta = $request->get('task_eta');
-        $data->password = $request->get('password');
+        // $data->password = $request->get('password');
         if($data->save()){
             // dispatch(new SendEmailJob($data));
             return "Data saved succesfully";
@@ -102,5 +102,26 @@ class APITasksController extends Controller
         }
         else
             return "Error deleting the data";
+    }
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        $user = Socialite::driver('google')->user();
+
+        // Check if the user is from the @iiitg.ac.in domain
+        if (str_ends_with($user->email, '@iiitg.ac.in')) {
+            // Authenticate the user or perform any other necessary actions
+            auth()->login($user, true);
+
+            return view('task.logged')->with('user', $user);
+        }
+
+        // Redirect or display an error message for unauthorized users
+        return redirect()->route('login')->with('error', 'Authentication failed. Only @iiitg.ac.in users are allowed.');
     }
 }

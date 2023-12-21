@@ -11,7 +11,11 @@ function closeNav() {
 // LOGIN PAGE
 
 var username,email,password;
-
+async function googleauth()
+{
+  // const response = await fetch("http://localhost:8080/api/task/login");
+  window.location.replace("http://localhost:8080/task/login");
+}
 async function validateForm() {
   username = document.getElementById("username").value;
   email = document.getElementById("email").value;

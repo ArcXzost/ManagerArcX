@@ -1,6 +1,6 @@
-username = sessionStorage.getItem('username');
-email = sessionStorage.getItem('email');
-password = sessionStorage.getItem('password');
+username = userData.name;
+email = userData.email;
+// password = userData.token;
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "15vw";
@@ -411,15 +411,20 @@ saveButton.addEventListener('click', async function(event){
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
            task_description: task_description,
            task_owner: username,
            task_owner_email: email,
            task_eta: task_eta,
-           password: password
+          //  password: password
            })
     };
+    // console.log(task_description);
+    // console.log(task_eta);
+    // console.log(username);
+    // console.log(email);
     await fetch("http://localhost:8080/api/task", settings);
     await fetch("http://localhost:8080/api/task/mail", {
       method: 'POST',
@@ -453,10 +458,11 @@ saveButton.addEventListener('click', async function(event){
   } 
 });
 
-console.log(selectedDate);
-console.log(username);
-console.log(password);
-console.log(email);
+console.log(userData.token)
+// console.log(selectedDate);
+// console.log(username);
+// console.log(password);
+// console.log(email);
 
 document.getElementById("logout").addEventListener('click',()=>{
   username="";
