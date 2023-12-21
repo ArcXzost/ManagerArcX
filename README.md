@@ -24,10 +24,15 @@ with a personalized dashboard that seamlessly integrates a user profile and an i
 - **Backend:** PHP (framework: Laravel), MySQL.
 
 
-# Steps to run ManagerArcX on your local computer
-- Make sure you are running Apache and mySQl on xampp control pannel on appropriate ports.
-- Migrate to build the database. The task table files are included.
-- Type php artisan serve in 1 terminal to run laravel artisan and npm run start in another to start the tailwind development server.
-- Make sure you cd to the appropriate directory while in the terminal.
+## Steps to run ManagerArcX on your local computer
+- Install XAMPP.
+- The root folder of the project must be located in C:\xampp\htdocs
+- Make sure you are running Apache and mySQl on XAMPP control pannel on appropriate ports.
+- To build the database
+  > php artisan migrate
+- The task table files are included in database\migrations\2023_07_12_173235_create_tasks_table.php
+- Run these commands on separate terminals in the root directory of the project(i.e backend here)
+  > php artisan serve --port=<port>
+  > npm run start
 - The default landing page can be accessed using the end point localhost:[port]/tasks
 - Hope you like this project :)
