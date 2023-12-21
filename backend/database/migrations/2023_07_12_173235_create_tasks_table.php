@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('task_description')->nullable();
             $table->string('task_owner');
             $table->string('task_owner_email');
-            $table->string('password');
+            // $table->string('password');
             $table->string('task_eta');
             $table->integer('status')->comment('0 in progress, 1 is done')->default(0);
             $table->timestamps();
