@@ -8,7 +8,7 @@ with a personalized dashboard that seamlessly integrates a user profile and an i
   ![User authentication](https://github.com/ArcXzost/ManagerArcX/blob/main/UserLogin.png)
   
 - **Dashboard:** A centralized hub showcasing user information and a dynamic calendar for intuitive task management.
-  ![Dashboard](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  ![Dashboard](https://github.com/ArcXzost/ManagerArcX/blob/main/TaskDisplay.png)
   
 - **Calendar Integration:** Users can easily select a date from the calendar to view their scheduled tasks for the day.
   ![Calendar](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
