@@ -4,7 +4,7 @@
 // use Kreait\Firebase\Factory;
 // use Kreait\Firebase\ServiceAccount;
 
-// Initialize Firebase
+// // Initialize Firebase
 // $serviceAccount = ServiceAccount::fromJsonFile(config('services.firebase.private_key'));
 // $firebase = (new Factory)
 //     ->withServiceAccount($serviceAccount)
@@ -14,10 +14,10 @@
 // $storage = $firebase->getStorage();
 
 // // Specify the source folder in your Laravel app
-// $sourceFolder = 'C:\xampp\htdocs\taskManager';
+// $sourceFolder = 'C:\xampp\htdocs\taskManager\backend';
 
 // // Specify the destination folder in Firebase Storage
-// $destinationFolder = 'gs://managerarcx.appspot.com/';
+// $destinationFolder = 'gs://managerarcx.appspot.com/Taskmanager';
 
 // // Get a reference to the Firebase Storage location
 // $storageRef = $storage->getBucket()->object($destinationFolder);

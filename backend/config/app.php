@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
+// use Kreait\Laravel\Firebase\ServiceProvider;
 
 return [
 
@@ -55,7 +56,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -168,6 +169,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Kreait\Laravel\Firebase\ServiceProvider::class,
     ])->toArray(),
 
     /*

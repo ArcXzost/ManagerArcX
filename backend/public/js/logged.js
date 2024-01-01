@@ -55,7 +55,8 @@ document.getElementById('calendarBody').addEventListener('click', (event) => {
     // Update the highlightedDate to the clicked cell's date
     selectedDate = String(selectedCell.textContent).padStart(2,'0') + '-' + String(currentDate.getMonth() + 1).padStart(2, '0') + '-' + currentDate.getFullYear();
     console.log(selectedDate);
-    displayTodos("http://localhost:8080/api/task/todos/"+email+"/"+selectedDate);
+    // displayTodos("http://localhost:8080/api/task/todos/"+email+"/"+selectedDate);
+    todoGenerate();
   }
 });
 
@@ -131,11 +132,13 @@ renderCalendar();
 var buttonClicked = 1;
 todoList = document.getElementById("list");
 
-function renderTodos(data) {
+function renderTodos(data,dataArray) {
   // Clear the todo list
   todoList.innerHTML = "";
   // console.log(data);
   // Render each todo item
+  const dataKeys = Object.keys(dataArray);
+  console.log(dataKeys);
   for(var i=0; i<data.length; i++){
 
   const todoItem = document.createElement("card");
@@ -148,7 +151,7 @@ function renderTodos(data) {
   todo_table.innerHTML = temp;
   const doneButton = document.createElement("button");
   doneButton.className = "fa fa-check mx-2 text-green-700 font-extrabold text-xl";
-  doneButton.index = parseInt(data[i].id);
+  doneButton.index = dataKeys[i];
   doneButton.addEventListener('click',async function(event){
     await fetch("http://localhost:8080/api/task/done/"+ event.currentTarget.index,{
       method: 'POST',
@@ -168,7 +171,7 @@ function renderTodos(data) {
 
   const deleteButton = document.createElement("button");
   deleteButton.className = "fa fa-trash mx-1 text-red-600 text-xl";
-  deleteButton.index = parseInt(data[i].id);
+  deleteButton.index = dataKeys[i];
   deleteButton.addEventListener("click", async function(event){
       await fetch("http://localhost:8080/api/task/"+event.currentTarget.index,{
         method: 'DELETE',
@@ -189,7 +192,7 @@ function renderTodos(data) {
 
   const updateButton = document.createElement("button");
   updateButton.className = "fa fa-pencil mx-2 text-indigo-600 text-xl";
-  updateButton.index = parseInt(data[i].id);
+  updateButton.index = dataKeys[i];
   updateButton.addEventListener("click", async function(event){
     modalOverlay.classList.remove("hidden");
     update = 1;
@@ -274,10 +277,12 @@ async function completeGenerate(){
     document.getElementById("Completed").classList.remove('text-gray-300');
     document.getElementById("Completed").classList.add('text-black');
   const response = await fetch("http://localhost:8080/api/task/completed/"+email);
-  const data= await response.json();
+  const dataArray= await response.json();
+  const dataKeys = Object.keys(dataArray);
+  const data = Object.values(dataArray);
   document.getElementById("Completed").innerText = "Completed" + "(" + data.length + ")";
   document.getElementById("completed").innerText = "Completed" + "(" + data.length + ")";
-  renderTodos(data);
+  renderTodos(data,dataArray);
   if (data == ""){
     const todoText = document.createElement("div");
     const folder = document.createElement("i");
@@ -308,30 +313,34 @@ async function overdueGenerate(){
     }
     document.getElementById("Overdue").classList.remove('text-gray-300');
     document.getElementById("Overdue").classList.add('text-black');
+
   response = await fetch("http://localhost:8080/api/task/overdue/"+email);
-  data= await response.json();
+  dataArray = await response.json();
+  data = Object.values(dataArray);
   document.getElementById("Overdue").innerText = "Overdue" + "(" + data.length + ")";
   document.getElementById("overdue").innerText = "Overdue" + "(" + data.length + ")";
-  renderTodos(data);
+  renderTodos(data,dataArray);
   if (data == ""){
     const todoText = document.createElement("div");
     const folder = document.createElement("i");
     // <i class=""></i>
     // <div id="todoText" class="">Your to-do list will appear here</div>
     folder.className = "text-8xl text-gray-400 font-bold fa fa-folder";
-    todoText.className = "font-mono  text-gray-400 font-bold text-xl";
+    todoText.className = "font-mono text-gray-400 font-bold text-xl";
     todoList.appendChild(folder);
     todoList.appendChild(todoText);
     todoText.innerText = "No tasks overdue";
   }
 
   response = await fetch("http://localhost:8080/api/task/completed/"+email);
-  data= await response.json();
+  dataArray= await response.json();
+  data = Object.values(dataArray);
   document.getElementById("Completed").innerText = "Completed" + "(" + data.length + ")";
   document.getElementById("completed").innerText = "Completed" + "(" + data.length + ")";
 
   response = await fetch("http://localhost:8080/api/task/todos/"+email+"/"+selectedDate);
-  data= await response.json();
+  dataArray= await response.json();
+  data = Object.values(dataArray);
   document.getElementById("To-do").innerText = "To-do" + "(" + data.length + ")";
   document.getElementById("todo").innerText = "To-do" + "(" + data.length + ")";
 }
@@ -341,11 +350,13 @@ document.getElementById("Overdue").addEventListener('click', overdueGenerate);
 async function displayTodos(url){
 
   response = await fetch(url);
-  data= await response.json();
+  dataArray = await response.json();
+  data = Object.values(dataArray);
+
 
   document.getElementById("To-do").innerText = "To-do" + "(" + data.length + ")";
   document.getElementById("todo").innerText = "To-do" + "(" + data.length + ")";
-  renderTodos(data);
+  renderTodos(data,dataArray);
 
   if (data == ""){
     const todoText = document.createElement("div");
@@ -364,13 +375,15 @@ async function displayTodos(url){
   }
   
   response = await fetch("http://localhost:8080/api/task/completed/"+email);
-  data= await response.json();
+  dataArray = await response.json();
+  data = Object.values(dataArray);
 
   document.getElementById("Completed").innerText = "Completed" + "(" + data.length + ")";
   document.getElementById("completed").innerText = "Completed" + "(" + data.length + ")";
 
   response = await fetch("http://localhost:8080/api/task/overdue/"+email);
-  data= await response.json();
+  dataArray = await response.json();
+  data = Object.values(dataArray);
 
   document.getElementById("Overdue").innerText = "Overdue" + "(" + data.length + ")";
   document.getElementById("overdue").innerText = "Overdue" + "(" + data.length + ")";
@@ -399,12 +412,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 saveButton.addEventListener('click', async function(event){
-  // console.log(username);
-  // console.log(email);
-  // console.log(password);
+
   document.getElementById("modalOverlay").classList.add("hidden");
   task_description = document.getElementById("task_description").value;
   task_eta = document.getElementById("task_eta").value;
+
   if(update == 0)
   {  const settings = {
         method: 'POST',
@@ -421,10 +433,7 @@ saveButton.addEventListener('click', async function(event){
           //  password: password
            })
     };
-    // console.log(task_description);
-    // console.log(task_eta);
-    // console.log(username);
-    // console.log(email);
+    
     await fetch("http://localhost:8080/api/task", settings);
     await fetch("http://localhost:8080/api/task/mail", {
       method: 'POST',

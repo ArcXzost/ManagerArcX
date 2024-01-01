@@ -34,7 +34,7 @@ return [
     'firebase' => [
         'database_url' => 'https://managerarcx-default-rtdb.asia-southeast1.firebasedatabase.app/',
         'database_auth_variable' => null,
-        'storage_bucket' => 'your-firebase-storage-bucket.appspot.com',
+        'storage_bucket' => 'gs://managerarcx.appspot.com',
         'app_id' => 'ManagerArcX',
         'project_id' => 'ManagerArcX',
         'private_key' => '\..\key\firebase.json',
