@@ -3,11 +3,9 @@
 A calendar-integrated task manager web application. Upon logging in or signing up, users are greeted
 with a personalized dashboard that seamlessly integrates a user profile and an interactive calendar.
 
-- **User Authentication:** Secure login and sign-up functionality for personalized user accounts.
+- **User Authentication:** Secure login and sign-up functionality for personalized user accounts using OAuth.
 
   ![Landing Page](https://github.com/ArcXzost/ManagerArcX/assets/96982138/60724828-04a8-4e94-8ca3-828e8b8f3b4b)
-  ![Authentication](https://github.com/ArcXzost/ManagerArcX/assets/96982138/ca8c7af1-11d9-42f5-84ce-3646ff3a2187)
-
 
 - **Dashboard:** A centralized hub showcasing user information and a dynamic calendar for intuitive task management.
   
@@ -34,20 +32,18 @@ with a personalized dashboard that seamlessly integrates a user profile and an i
 ## Technology Stack:
 
 - **Frontend:** HTML, Tailwind CSS, JavaScript
-- **Backend:** PHP (framework: Laravel), MySQL.
+- **Backend:** PHP (framework: Laravel), Firebase Real-time Database, Firebase SDK
 
 
 ## Steps to run ManagerArcX on your local computer
-- Install XAMPP.
-- The root folder of the project must be located in C:\xampp\htdocs
-- Make sure you are running Apache and mySQl on XAMPP control pannel on appropriate ports.
-- To build the database
-  > php artisan migrate
-- The task table files are included in database\migrations\2023_07_12_173235_create_tasks_table.php
+- Database already set up with firebase real-time database
+- Run these commands to install firebase sdk and tools
+  >composer require kreait/laravel-firebase --with-all-dependencies
+
 - Run these commands on separate terminals in the root directory of the project(i.e backend here)
   > php artisan serve --port=[port]
   
   > npm run start
 
-- The default landing page can be accessed using the end point localhost:[port]/tasks
+- The default landing page can be accessed using the end point localhost:[port]
 - Hope you like this project :)
