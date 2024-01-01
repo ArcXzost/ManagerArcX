@@ -6,21 +6,25 @@ with a personalized dashboard that seamlessly integrates a user profile and an i
 - **User Authentication:** Secure login and sign-up functionality for personalized user accounts.
 
   ![Landing Page](https://github.com/ArcXzost/ManagerArcX/assets/96982138/60724828-04a8-4e94-8ca3-828e8b8f3b4b)
-  ![Authentication](https://github.com/ArcXzost/ManagerArcX/assets/96982138/14ef1c29-ab70-4d6b-a71e-b25fca63522d)
+  ![Authentication](https://github.com/ArcXzost/ManagerArcX/assets/96982138/ca8c7af1-11d9-42f5-84ce-3646ff3a2187)
 
 
 - **Dashboard:** A centralized hub showcasing user information and a dynamic calendar for intuitive task management.
   
-  ![Dashboard](https://github.com/ArcXzost/ManagerArcX/blob/main/TaskDisplay.png)
-  
 - **Calendar Integration:** Users can easily select a date from the calendar to view their scheduled tasks for the day.
-  ![Calendar](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  
+  ![Calendar](https://github.com/ArcXzost/ManagerArcX/assets/96982138/e1c48f6b-9a78-49d9-878b-861bbed739d4)
+
   
 - **Task Organization:** Tasks are categorized into sections, including upcoming tasks, completed tasks, and overdue tasks.
-  ![Tasks](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  
+  ![Tasks](https://github.com/ArcXzost/ManagerArcX/assets/96982138/6faaef03-e81f-4fa4-93bd-2dab4f5352e6)
+
   
 - **Task Operations:** Users have the flexibility to add, update, delete, and mark tasks as done, providing full control over their task list.
-  ![Tasks](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  
+  ![Tasks](https://github.com/ArcXzost/ManagerArcX/assets/96982138/48f5a58b-c118-4393-8b08-148de8835143)
+
   
 ## Impact: 
 
