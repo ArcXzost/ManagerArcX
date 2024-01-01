@@ -13,31 +13,7 @@ use Kreait\Firebase\Contract\Database;
 
 class APITasksController extends Controller
 {
-    // public function create(Request $request){
-    //     // dd($request->all());
-    //     $data = new TaskManager();
-    //     $data->task_description = $request->get('task_description');
-    //     $data->task_owner = $request->get('task_owner');
-    //     $data->task_owner_email = $request->get('task_owner_email');
-    //     $data->task_eta = $request->get('task_eta');
-    //     // $data->password = $request->get('password');
-    //     if($data->save()){
-    //         // dispatch(new SendEmailJob($data));
-    //         return "Data saved succesfully";
-    //     }
-    //     else
-    //         return "Error saving the data";
-
-    // }
-
-    // public function connect()
-    // {
-    //     $firebase = (new Factory)
-    //         ->withServiceAccount(base_path(env('FIREBASE_CREDENTIALS')))
-    //         ->withDatabaseUrl(env('FIREBASE_DATABASE_URL'));
-
-    //     return $firebase->createDatabase();
-    // }
+    
     public function __construct(Database $database)
     {
         $this->database = $database;
@@ -182,10 +158,11 @@ public function getTaskByID($id){
 
     }
 
-    public function mailUser(){
-        $data = TaskManager::orderBy('id','DESC')->first();
-        Mail::to($data->task_owner_email)->queue(new MailTask($data));
-    }
+    // public function mailUser(){
+    //     // $data = TaskManager::orderBy('id','DESC')->first();
+    //     $data = $this->database->getReference($this->table)->orderByKey()->limitToLast(1)->getValue();
+    //     Mail::to($data['task_owner_email'])->queue(new MailTask($data));
+    // }
 
     public function markAsDone($id){
         $data = $this->database->getReference($this->table)->getChild($id)
@@ -201,24 +178,4 @@ public function getTaskByID($id){
         $data = $this->database->getReference($this->table)->getChild($id)->remove();
     }
 
-    // public function redirectToGoogle()
-    // {
-    //     return Socialite::driver('google')->redirect();
-    // }
-
-    // public function handleGoogleCallback()
-    // {
-    //     $user = Socialite::driver('google')->user();
-
-    //     // Check if the user is from the @iiitg.ac.in domain
-    //     if (str_ends_with($user->email, '@iiitg.ac.in')) {
-    //         // Authenticate the user or perform any other necessary actions
-    //         auth()->login($user, true);
-
-    //         return view('task.logged')->with('user', $user);
-    //     }
-
-    //     // Redirect or display an error message for unauthorized users
-    //     return redirect()->route('login')->with('error', 'Authentication failed. Only @iiitg.ac.in users are allowed.');
-    // }
 }

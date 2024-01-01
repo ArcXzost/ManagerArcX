@@ -477,5 +477,5 @@ document.getElementById("logout").addEventListener('click',()=>{
   username="";
   password="";
   email="";
-  window.location.replace("http://localhost:8080/tasks");
+  window.location.replace("http://localhost:8080");
 });

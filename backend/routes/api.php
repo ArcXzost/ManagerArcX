@@ -30,7 +30,7 @@ Route::get('task/{id}',[APITasksController::class,'getTaskByID']);
 Route::put('task/{id}',[APITasksController::class,'updateTaskByID']);
 Route::post('task/done/{id}',[APITasksController::class,'markAsDone']);
 Route::delete('task/{id}',[APITasksController::class,'delete']);
-Route::post('task/mail',[APITasksController::class,'mailUser']);
+// Route::post('task/mail',[APITasksController::class,'mailUser']);
 // Route::get('task/login', [APITasksController::class,'redirectToGoogle'])->name('login');
 // Route::get('task/google/callback', [APITasksController::class,'handleGoogleCallback']);
 
