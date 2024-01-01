@@ -63,7 +63,7 @@
          <div class="container text-center px-6">
            <h2 class="text-3xl font-bold text-center text-white mb-8 ml-auto">Start Managing Your Tasks Today</h2>
            <p class="text-white text-center mb-8 ml-auto">Sign up now and experience the power of our task manager app.</p>
-           <a id="signup" class="bg-white text-violet-500 font-semibold py-3 px-6 rounded hover:bg-indigo-600 hover:text-white">Sign Up</a>
+           <a id="signup" onclick="googleauth()" class="bg-white text-violet-500 font-semibold py-3 px-6 rounded hover:bg-indigo-600 hover:text-white">Sign Up</a>
          </div>
 
          <!-- LOGIN PAGE -->
