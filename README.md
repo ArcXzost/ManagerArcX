@@ -38,8 +38,10 @@ with a personalized dashboard that seamlessly integrates a user profile and an i
 
 
 ## Steps to run ManagerArcX on your local computer
-- Install XAMPP.
+- Install XAMPP and composer.
 - The root folder of the project must be located in C:\xampp\htdocs
+- Create a laravel project:
+  > composer create-project laravel/laravel example-app
 - Make sure you are running Apache and mySQl on XAMPP control pannel on appropriate ports.
 - To build the database
   > php artisan migrate
