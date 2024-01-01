@@ -5,7 +5,9 @@ with a personalized dashboard that seamlessly integrates a user profile and an i
 
 - **User Authentication:** Secure login and sign-up functionality for personalized user accounts.
 
-  ![Authentication](https://github.com/ArcXzost/ManagerArcX/assets/96982138/60724828-04a8-4e94-8ca3-828e8b8f3b4b)
+  ![Landing Page](https://github.com/ArcXzost/ManagerArcX/assets/96982138/60724828-04a8-4e94-8ca3-828e8b8f3b4b)
+  ![Authentication](https://github.com/ArcXzost/ManagerArcX/assets/96982138/14ef1c29-ab70-4d6b-a71e-b25fca63522d)
+
 
 - **Dashboard:** A centralized hub showcasing user information and a dynamic calendar for intuitive task management.
   
